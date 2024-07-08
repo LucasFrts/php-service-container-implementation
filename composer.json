@@ -1,0 +1,16 @@
+{
+    "name": "lucasfreitas/servicecontainer",
+    "autoload": {
+        "psr-4": {
+            "LucasFreitas\\ServiceContainer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lucas"
+        }
+    ],
+    "require": {
+        "psr/container": "^2.0"
+    }
+}
