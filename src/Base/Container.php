@@ -7,6 +7,7 @@ use ReflectionClass;
 
 class Container implements ContainerInterface
 {
+    protected static $instance = null;
     protected array $services = [];
 
     public function get(string $id) : mixed
@@ -54,5 +55,13 @@ class Container implements ContainerInterface
     {
         $target = $target ?? $id;
         $this->services[$id] = new ReflectionClass($target);
+    }
+
+    public static function getContainer() : Container
+    {
+        if(is_null(static::$instance)){
+            static::$instance = new static;
+        }
+        return static::$instance;
     }
 }
